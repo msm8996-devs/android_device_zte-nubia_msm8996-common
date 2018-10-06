@@ -180,6 +180,7 @@ PRODUCT_PACKAGES += \
     libcurl \
     libgnss \
     libgnsspps \
+    libloc_pla \
     libsensorndkbridge
 
 PRODUCT_COPY_FILES += \
@@ -306,7 +307,8 @@ PRODUCT_COPY_FILES += \
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service.zte-nubia
+    android.hardware.sensors@1.0-service.zte-nubia \
+    libsensorndkbridge
 
 # Shims
 PRODUCT_PACKAGES += \
