@@ -15,7 +15,9 @@
 # limitations under the License.
 #
 
+
 BOARD_VENDOR := nubia
+BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 
 VENDOR_PATH := device/nubia/msm8996-common
 
