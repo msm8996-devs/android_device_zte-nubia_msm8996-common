@@ -15,7 +15,7 @@
 //
 
 cc_library_static {
-    name: "libinit.xiaomi_8996",
+    name: "libinit.zte-nubia_8996",
     recovery_available: true,
     srcs: ["init_msm8996.cpp"],
     include_dirs: [

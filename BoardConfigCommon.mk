@@ -15,9 +15,9 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := xiaomi
+BOARD_VENDOR := zte-nubia
 
-VENDOR_PATH := device/xiaomi/msm8996-common
+VENDOR_PATH := device/zte-nubia/msm8996-common
 
 # Architecture
 TARGET_ARCH := arm64
@@ -39,17 +39,6 @@ TARGET_USES_64_BIT_BINDER := true
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := msm8996
 TARGET_NO_BOOTLOADER := true
-
-# Kernel
-BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
-BOARD_KERNEL_CMDLINE += loop.max_part=7
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_TAGS_OFFSET := 0x00000100
-BOARD_RAMDISK_OFFSET := 0x01000000
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_SOURCE := kernel/xiaomi/msm8996
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8996
@@ -146,20 +135,6 @@ DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(VENDOR_PATH)/compatibility_matrix.xml
 
 # Partitions
-BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := f2fs
-BOARD_CACHEIMAGE_PARTITION_SIZE := 402653184
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 58846064640
-BOARD_VENDORIMAGE_PARTITION_SIZE := 872415232
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
-BOARD_ROOT_EXTRA_SYMLINKS := \
-    /mnt/vendor/persist:/persist \
-    /vendor/dsp:/dsp \
-    /vendor/firmware_mnt:/firmware \
-    /vendor/bt_firmware:/bt_firmware
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_USES_MKE2FS := true
 
@@ -170,17 +145,6 @@ TARGET_USES_INTERACTION_BOOST := true
 # QCOM
 BOARD_USES_QCOM_HARDWARE := true
 
-# Recovery
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/rootdir/etc/fstab.qcom
-TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_UI_BLANK_UNBLANK_ON_INIT := true
-TARGET_USERIMAGES_USE_EXT4 := true
-TARGET_USERIMAGES_USE_F2FS := true
-
-# Releasetools
-TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_xiaomi
-TARGET_RELEASETOOLS_EXTENSIONS := $(VENDOR_PATH)
-
 # RIL
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
@@ -190,11 +154,11 @@ VENDOR_SECURITY_PATCH := 2018-10-01
 # SELinux
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit.xiaomi_8996
-TARGET_RECOVERY_DEVICE_MODULES := libinit.xiaomi_8996
+TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit.zte-nubia_8996
+TARGET_RECOVERY_DEVICE_MODULES := libinit.zte-nubia_8996
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -212,4 +176,4 @@ WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Inherit from the proprietary version
--include vendor/xiaomi/msm8996-common/BoardConfigVendor.mk
+-include vendor/zte-nubia/msm8996-common/BoardConfigVendor.mk
