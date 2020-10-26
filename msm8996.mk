@@ -15,8 +15,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
-
 # Get non-open-source specific aspects
 $(call inherit-product, vendor/zte-nubia/msm8996-common/msm8996-common-vendor.mk)
 
@@ -25,7 +23,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage/lineage-sdk
 
@@ -141,10 +138,6 @@ PRODUCT_PACKAGES += \
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
-
-# Common config scripts
-PRODUCT_PACKAGES += \
-    init.panel.sh
 
 # Common init scripts
 PRODUCT_PACKAGES += \
