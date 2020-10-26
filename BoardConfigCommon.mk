@@ -157,8 +157,8 @@ include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := //$(PLATFORM_PATH):libinit.zte-nubia_8996
-TARGET_RECOVERY_DEVICE_MODULES := libinit.zte-nubia_8996
+#TARGET_INIT_VENDOR_LIB := $(PLATFORM_PATH):libinit.zte-nubia
+#TARGET_RECOVERY_DEVICE_MODULES := libinit.zte-nubia
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
