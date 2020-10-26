@@ -45,6 +45,12 @@ function blob_fixup() {
     vendor/lib64/hw/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
+
+    # Hex edit libaudcal.so to store acdbdata in new paths
+    vendor/lib/libaudcal.so | vendor/lib64/libaudcal.so)
+        sed -i "s|/data/vendor/misc/audio/acdbdata/delta/|/data/vendor/audio/acdbdata/delta/\x00\x00\x00\x00\x00|g" "${2}"
+        ;;
+
     vendor/lib64/lib-uceservice.so)
         patchelf --add-needed "libbase_shim.so" "${2}"
         ;;
