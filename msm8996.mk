@@ -336,6 +336,7 @@ PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
 # VNDK
+BOARD_VNDK_RUNTIME_DISABLE := true
 PRODUCT_PACKAGES += \
     vndk-sp
 
