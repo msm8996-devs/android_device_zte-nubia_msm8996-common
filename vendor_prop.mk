@@ -55,11 +55,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.btconfig.chip=QCA6164 \
     ro.btconfig.dev=/dev/ttyHS0
 
-# Camera
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.camera.gyro.disable=0 \
-    persist.camera.imglib.fddsp=1
-
 # CNE
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1
@@ -70,13 +65,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.mode=concurrent \
     persist.data.netmgrd.qos.enable=true \
     ro.use_data_netmgrd=true
-
-# Display (Qualcomm AD)
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.qcom.ad=1 \
-    ro.qcom.ad.calib.data=/system/etc/calib.cfg \
-    ro.qcom.ad.sensortype=2 \
-    ro.vendor.display.cabl=0
 
 # DRM
 PRODUCT_PROPERTY_OVERRIDES += \
